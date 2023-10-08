@@ -32,8 +32,8 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
               <Info data={product} />
             </div>
           </div>
-          {relatedProductsFiltered.length > 0 && <hr className="my-10" />}
-          {relatedProductsFiltered.length > 0 && <ProductList title="Related Products" items={relatedProductsFiltered} />}
+          <hr className="my-10" />
+          <ProductList title="Related Products" items={relatedProductsFiltered} />
         </div>
       </Container>
     </div>
