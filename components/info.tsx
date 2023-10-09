@@ -4,6 +4,8 @@ import { ShoppingCart } from "lucide-react";
 
 import { Product } from "@/types";
 
+import useCart from "@/hooks/use-cart";
+
 import Currency from "@/components/ui/currency";
 import Button from "@/components/ui/button";
 
@@ -12,7 +14,13 @@ interface InfoProps {
 }
 
 const Info: React.FC<InfoProps> = ({ data }) => {
-  const onAddToCart = () => {};
+  const cart = useCart();
+
+  const onAddToCart: React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.stopPropagation();
+
+    cart.addItem(data);
+  };
 
   return (
     <div>
